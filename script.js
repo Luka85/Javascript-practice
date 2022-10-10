@@ -25,11 +25,10 @@ const names = [
 // console.log("has", has(13, odds)); // => true
 // console.log("has", has(24, odds)); // => false
 
-// z loopi (for, while) je treba definirat te funkcije, ki so uporabljene v console.logih tako, da returnajo kar je tud napisan zraven in da delujejo tako kot so invokane.
+// z loopi (for ali while) je treba definirat te funkcije, ki so uporabljene v console.logih tako, da returnajo kar je tud napisan zraven in da delujejo tako kot so invokane.
 
-//*1.
+//*1. FOR & WHILE
 function last(num, odds) {
-  const array = [];
   for (let i = odds.length - num; i < odds.length; i++) {
     while (i < odds.length) {
       array.push(odds[i]);
@@ -41,7 +40,18 @@ function last(num, odds) {
 
 console.log("last", last(5, odds)); // => [23,25,27,29,31]
 
-//*2.
+//*1. FOR
+function last(x, odds) {
+  const array = [];
+  for (let i = odds.length - x; i < odds.length; i++) {
+    array.push(odds[i]);
+  }
+  return array;
+}
+
+console.log("last", last(5, odds)); // => [23,25,27,29,31]
+
+//*2. FOR & WHILE
 function from(x, y, odds) {
   const array = [];
 
@@ -50,6 +60,17 @@ function from(x, y, odds) {
       array.push(odds[i]);
       i++;
     }
+  }
+  return array;
+}
+console.log("from", from(3, 6, odds)); // => [7,9,11,13]
+
+//*2. FOR
+function from(x, y, odds) {
+  const array = [];
+
+  for (let i = x; i <= y; i++) {
+    array.push(odds[i]);
   }
   return array;
 }
@@ -83,10 +104,15 @@ console.log("has", has1(24, odds)); // => false
 function rest(x, odds) {
   const array = [];
 
-  for (let i = 0; i < odds.length; i++) {}
+  for (let i = 0; i < odds.length; i++) {
+    if (x(odds[i])) {
+      array.push(odds[i]);
+    }
+  }
+  return array;
 }
 
 console.log(
   "rest",
   rest((x) => x > 10, odds)
-); // => [11,13,15,17,19,21,23,25,27,29,31]
+); //  => [11,13,15,17,19,21,23,25,27,29,31]

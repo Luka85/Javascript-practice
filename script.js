@@ -1,21 +1,7 @@
-const odds = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31];
-const randoms = [
-  3.0, 7.3, 1.01, 0.3, 0.05, 1.4, 9, 8, 7.77, 3.2, 12.4, 18.9, 15.0, 21.4,
-];
-const names = [
-  "Reinhold",
-  "Mathias",
-  "Hans",
-  "Ludwig",
-  "Walter",
-  "Joseph",
-  "Munther",
-];
-
 // Loops
 // Samo z uporabo operatorjev (for, while)
 
-// 1. Define functions
+//! 1. Define functions
 // console.log("last", last(5, odds)); // => [23,25,27,29,31]
 // console.log("from", from(3, 6, odds)); // => [7,9,11,13]
 // console.log(
@@ -25,7 +11,7 @@ const names = [
 // console.log("has", has(13, odds)); // => true
 // console.log("has", has(24, odds)); // => false
 
-// z loopi (for ali while) je treba definirat te funkcije, ki so uporabljene v console.logih tako, da returnajo kar je tud napisan zraven in da delujejo tako kot so invokane.
+const odds = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31];
 
 //*1. FOR & WHILE
 function last(num, odds) {

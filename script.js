@@ -229,3 +229,5 @@ console.log(
   "myFilter",
   myFilter((x) => x == "Ludwig", names)
 ); // => ['Ludwig']
+
+console.log("hello");

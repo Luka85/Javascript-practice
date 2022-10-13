@@ -212,7 +212,7 @@ console.log(
   myFilter((x) => x == "Ludwig", names)
 ); // => ['Ludwig']
 
-//* 4. WHILE LOOP
+//* 4.  WHILE LOOP
 function myFilter(func, names) {
   const array = [];
   let i = 0;

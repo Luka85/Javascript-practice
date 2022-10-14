@@ -231,7 +231,6 @@ console.log(
 ); // => ['Ludwig']
 
 //! 4. Define funcions
-// console.log(some(odds, (x) => x > 20)); // => true
 // console.log(every(odds, (x) => x > 20)); // => false
 
 // Can't use Array.map(), filter, some, every ..
@@ -260,3 +259,13 @@ function filter(odds, func) {
   return array;
 }
 console.log(filter(odds, (x) => x < 6)); // => [1, 3, 5]
+
+//* 3.
+function some(odds, func) {
+  for (let odd of odds) {
+    if (func(odd)) {
+      return true;
+    }
+  }
+}
+console.log(some(odds, (x) => x > 20)); // => true

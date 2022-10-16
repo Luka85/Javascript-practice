@@ -270,12 +270,13 @@ function some(odds, func) {
 console.log(some(odds, (x) => x > 20)); // => true
 
 //* 4.
+
 function every(odds, func) {
   for (let i = 0; i < odds.length; i++) {
-    if (func(odds[i])) {
-      return true;
+    if (!func(odds[i])) {
+      return func(odds[i]);
     }
-    return false;
   }
+  return true;
 }
 console.log(every(odds, (x) => x > 20)); // => false

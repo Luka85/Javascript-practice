@@ -229,3 +229,70 @@ console.log(
   "myFilter",
   myFilter((x) => x == "Ludwig", names)
 ); // => ['Ludwig']
+
+//! 4. Define funcions
+// Can't use Array.map(), filter, some, every ..
+// Only with For || while
+
+// *1.
+function map(odds, func) {
+  const array = [];
+
+  for (let i = 0; i < odds.length; i++) {
+    array.push(func(odds[i]));
+  }
+  return array;
+}
+
+console.log(map(odds, (x) => x + 1)); // => [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32]
+
+//* 2.
+function filter(odds, func) {
+  const array = [];
+  for (let i = 0; i < odds.length; i++) {
+    if (func(odds[i])) {
+      array.push(odds[i]);
+    }
+  }
+  return array;
+}
+console.log(filter(odds, (x) => x < 6)); // => [1, 3, 5]
+
+//* 3.
+function some(odds, func) {
+  for (let odd of odds) {
+    if (func(odd)) {
+      return true;
+    }
+  }
+  return false;
+}
+console.log(some(odds, (x) => x > 20)); // => true
+
+//* 4.
+
+function every(odds, func) {
+  for (let i = 0; i < odds.length; i++) {
+    if (!func(odds[i])) {
+      return false;
+    }
+  }
+  return true;
+}
+console.log(every(odds, (x) => x > 20)); // => false
+
+//*5. REDUCE
+
+function reduce(odds, func) {
+  let total = 0;
+
+  for (let i = 0; i < odds.length; i++) {
+    total += odds[i];
+    console.log(
+      `i:${i}, odds[i]:${odds[i]}, total:${total}`,
+      func(total, odds[i])
+    );
+  }
+  return total;
+}
+console.log(reduce(odds, (x, y) => x * y));

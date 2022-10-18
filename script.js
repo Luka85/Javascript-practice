@@ -274,9 +274,25 @@ console.log(some(odds, (x) => x > 20)); // => true
 function every(odds, func) {
   for (let i = 0; i < odds.length; i++) {
     if (!func(odds[i])) {
-      return func(odds[i]);
+      return false;
     }
   }
   return true;
 }
 console.log(every(odds, (x) => x > 20)); // => false
+
+//*5. REDUCE
+
+function reduce(odds, func) {
+  let total = 0;
+
+  for (let i = 0; i < odds.length; i++) {
+    total += odds[i];
+    console.log(
+      `i:${i}, odds[i]:${odds[i]}, total:${total}`,
+      func(total, odds[i])
+    );
+  }
+  return total;
+}
+console.log(reduce(odds, (x, y) => x * y));
